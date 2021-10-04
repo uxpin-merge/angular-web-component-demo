@@ -1,0 +1,16 @@
+<section class="accordion-panel-container w-100">
+    <div class="panel-header w-100 d-flex justify-content-between" [ngClass]="{'open': open, 'left': orientLeft, 'right': !orientLeft}"
+        (click)="toggleOpen()">
+        <ng-container *ngIf="htmlTitle;else titleString">
+            <ng-content select="[accordionTitle]"></ng-content>
+        </ng-container>
+        <ng-template #titleString>
+            <span class="title">{{title}}</span>
+        </ng-template>
+        <img [ngClass]="{'collapse-accordion': open, '': !open}"
+                        src="/assets/img/micro-common-ui/components/blue-caret-down.svg"/>
+    </div>
+    <div class="panel-content" *ngIf="open">
+        <ng-content></ng-content>
+    </div>
+</section>

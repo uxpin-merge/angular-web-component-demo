@@ -1,0 +1,32 @@
+$iconPadding: 20px;
+$iconPosition: 6px;
+$fontSize: 14px;
+
+.accordion-panel-container {
+    overflow: auto;
+    position: relative;
+    .panel-header {
+        color: inherit;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 0 12px;
+        padding:0 0 5px;
+        .title {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .collapse-accordion {
+            transform: rotate(180deg);
+        }
+        &.right {
+            padding-right: $iconPadding;
+        }
+
+        &.left {
+            padding-left: $iconPadding;
+        }
+    }
+    .panel-content{
+        padding: 0 10px;
+    }
+}

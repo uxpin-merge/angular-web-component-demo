@@ -1,0 +1,39 @@
+.action-button-container {
+    background: unset;
+    border: 1px solid var(--ct-blue);
+    cursor: pointer;
+    display: table-cell;
+    min-width: 50px;
+    padding: 5px 8px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 7px;
+    &.icon-type {
+        background: transparent;
+        border: 0px;
+        border-radius: 50%;
+        min-width: 0px;
+        padding: 5px;
+        &:hover {
+            background: transparent;
+        }
+        .action-button {
+            display: none;
+        }
+    }
+    &.disable {
+        cursor: not-allowed;
+        opacity: 0.7;
+        button {
+            cursor: not-allowed;
+        }
+    }
+    .action-button {
+        text-transform: uppercase;
+        background: transparent;
+        border: 0px;
+        padding: 0px;
+        padding-left: 5px;
+        color: inherit;
+    }
+}

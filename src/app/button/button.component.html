@@ -1,0 +1,5 @@
+<section class="action-button-container {{type + '-type'}}" [ngClass]="{ 'hasPrefixIcon': prefixIcon, 'disable': (disableView || disableClick) }"
+    (click)="handleClick($event)">
+    <span class="prefixIcon fa {{prefixIcon}}" *ngIf="prefixIcon"></span>
+    <button type="{{type}}" class="action-button">{{label}}</button>
+</section>
