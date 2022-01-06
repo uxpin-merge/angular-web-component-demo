@@ -1,6 +1,8 @@
+// @import '../node_modules/@dds/react/src/scss/dds-all.scss';
+
 .action-button-container {
     background: unset;
-    border: 1px solid var(--ct-blue);
+    border: 1px solid #1a7dff;
     cursor: pointer;
     display: table-cell;
     min-width: 50px;

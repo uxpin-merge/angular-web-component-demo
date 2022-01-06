@@ -12,10 +12,11 @@ build = async () =>{
       ];
     
       await fs.ensureDir('web-components');
-      await concat(files, 'web-components/news-wc.js');
-      await concat(files, 'web-components/button-wc.js');
-      await concat(files, 'web-components/page-title-wc.js');
-      await concat(files, 'web-components/accordion-wc.js');
+      await concat(files, 'web-components/web-components.js');
+      // await concat(files, 'web-components/button-wc.js');
+      // await concat(files, 'web-components/page-title-wc.js');
+      // await concat(files, 'web-components/accordion-wc.js');
+      // await concat(files, 'web-components/checkbox-wc.js');
 }
 
 build();

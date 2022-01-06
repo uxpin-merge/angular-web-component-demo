@@ -1,0 +1,16 @@
+<div class="check-box-container cursor-pointer {{mode}} {{ disabled ? 'disabled' : ''}}  {{size}}"
+    [ngClass]="{'disabled':  disabled, 'align-vertical':  verticalAlign, 'd-inline-flex': !!label, 'd-inline-block': !label}" (click)="triggerChange($event)">
+    <div class="checkbox position-relative d-inline-block m-0 {{multiType}}" [ngClass]="{'checked':  (mode === checkboxMode.NORMAL && checked), 'checkbox-light': cbColorMode === checkboxColorMode.LIGHT, 'checkbox-normal': cbColorMode === checkboxColorMode.NORMAL
+    ,'checkbox-rounded':(mode === checkboxMode.ROUNDED && checked),'border-0':(mode === checkboxMode.ROUNDED)}">
+        <svg *ngIf="multiType === checkboxMultitype.FULL || (mode === checkboxMode.NORMAL && checked) || (mode === checkboxMode.ROUNDED)"
+            version="1.1" focusable="false" viewBox="0 0 24 24" xml:space="preserve"
+            class="ct-checkbox-checkmark position-absolute w-100"
+            [ngClass]="{'ct-checkbox-checkmark-light': cbColorMode === checkboxColorMode.LIGHT ,
+            'ct-checkbox-checkmark-rounded p-1': mode === checkboxMode.ROUNDED}">
+            <path fill="none" stroke="white" d="M4.1,12.7 9,17.6 20.3,6.3" class="ct-checkbox-checkmark-path"></path>
+        </svg>
+        <div class="ct-checkbox-mixedmark position-absolute m-auto" *ngIf="multiType === checkboxMultitype.PARTIAL">
+        </div>
+    </div>
+    <div  [ngClass]="{'pl-3 align-middle font-md-size':mode === checkboxMode.ROUNDED, 'd-inline-block': !!label}" class="check-box-label px-2" [innerHTML]="label"></div>
+</div>

@@ -8,6 +8,9 @@ import { NewsComponent } from './news/news.component';
 import { ButtonComponent } from './button/button.component';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { AccordionComponent} from './accordion/accordion.component';
+import { CheckBoxComponent} from './check-box/check-box.component'; 
+import { MatSliderModule } from '@angular/material/slider';
+
 
 import  { Injector} from '@angular/core';
 import  { createCustomElement } from '@angular/elements';
@@ -18,16 +21,18 @@ import  { createCustomElement } from '@angular/elements';
     NewsComponent,
     ButtonComponent,
     PageTitleComponent,
-    AccordionComponent
+    AccordionComponent,
+    CheckBoxComponent
   ],
 
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSliderModule
   ],
   providers: [],
-  bootstrap: [AppComponent , NewsComponent, ButtonComponent, PageTitleComponent, AccordionComponent]
+  bootstrap: [AppComponent , NewsComponent, ButtonComponent, PageTitleComponent, AccordionComponent, CheckBoxComponent]
 })
 export class AppModule {
 
@@ -41,6 +46,9 @@ export class AppModule {
 
     el = createCustomElement(AccordionComponent, { injector });
     customElements.define('accordion-wc', el);
+
+    el = createCustomElement(CheckBoxComponent, { injector });
+    customElements.define('checkbox-wc', el);
   }
   ngDoBootstrap() {}
 
